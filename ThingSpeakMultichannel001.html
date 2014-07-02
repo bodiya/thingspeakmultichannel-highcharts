@@ -5,8 +5,8 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!--<script src="https://www.thingspeak.com/assets/application-927d1479ab2235e91ae25cb56d33b211.js"
      type="text/javascript"></script>-->
-    <script src="http://code.highcharts.com/stock/highstock.js"></script>
-    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script src="https://rawgithub.com/highslide-software/export-csv/master/export-csv.js"></script>
     <script type="text/javascript">
       
@@ -24,8 +24,8 @@ var channelsLoaded = 0;
 var channelKeys =[];
 //Change TO: display two fields from the same channel from a Rain gauge - 15min counts, and total counts
 //  src="http://api.thingspeak.com/channels/8652/charts/3?width=1300&height=520&results=1000&dynamic=false&title=15minTotals%20(0.5mm)" ></iframe>
-channelKeys.push({channelNumber:8652, name:'RainGauge',key:'EAEX6922YVUKP3IP',
-   fieldList:[{field:3,axis:'C'},{field:7,axis:'R'}]});
+channelKeys.push({channelNumber:123CHANNEL_GOES_HERE123, name:'Temperature',key:'KEY_GOES_HERE',
+   fieldList:[{field:1,axis:'T'},{field:2,axis:'T'},{field:3,axis:'T'},{field:4,axis:'T'}]});
     
 // user's timezone offset
 var myOffset = new Date().getTimezoneOffset();
@@ -218,7 +218,7 @@ $(document).ready(function()
 				text: 'All'
 			}],
 			inputEnabled: true,
-			selected: 4  //Change to 4th button as default
+			selected: 2
 		},
     title: {
 			text: ''
@@ -270,15 +270,9 @@ $(document).ready(function()
 		},
 		yAxis: [{
             title: {
-                text: 'RainGauge Total (0.01")'
+                text: 'Temperature (°F)'
             },
-            id: 'R'
-    }, {
-            title: {
-                text: '15min counts (0.01")'
-            },
-            opposite: true,
-            id: 'C'
+            id: 'T'
     }],
 		exporting: {
 		  enabled: true,
